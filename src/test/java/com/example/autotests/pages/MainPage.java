@@ -1,15 +1,9 @@
-package com.example.autotests;
+package com.example.autotests.pages;
 
-import com.codeborne.selenide.SelenideElement;
 import lombok.NoArgsConstructor;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.util.List;
 
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$x;
 
 @NoArgsConstructor
 public class MainPage {

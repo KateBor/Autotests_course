@@ -1,4 +1,4 @@
-package com.example.autotests;
+package com.example.autotests.pages;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,4 +1,7 @@
-package com.example.autotests;
+package com.example.autotests.tests;
+import com.example.autotests.utils.User;
+import com.example.autotests.pages.LoginPage;
+import com.example.autotests.pages.MainPage;
 import org.junit.jupiter.api.*;
 
 import java.io.*;

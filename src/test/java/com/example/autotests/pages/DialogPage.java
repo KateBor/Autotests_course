@@ -1,4 +1,4 @@
-package com.example.autotests;
+package com.example.autotests.pages;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,7 +12,7 @@ import static com.codeborne.selenide.Selenide.$;
 public class DialogPage {
     String xPathMessage = "//msg-input";
     String xPathButton = "//msg-button[@data-tsid='button_send']";
-    String xPathLastMessage = "(//msg-message/div/div/div/msg-parsed-text)[last()]";
+    String xPathLastMessage = "(//msg-message[not(@mine)]//div/msg-parsed-text)[last()]";
 
     public void sendMessage(String message) {
         $(By.xpath(xPathMessage)).setValue(message);

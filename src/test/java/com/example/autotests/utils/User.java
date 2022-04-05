@@ -1,4 +1,4 @@
-package com.example.autotests;
+package com.example.autotests.utils;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

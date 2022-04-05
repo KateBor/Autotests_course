@@ -1,19 +1,22 @@
-package com.example.autotests;
+package com.example.autotests.tests;
 
+import com.example.autotests.utils.Toolbar;
+import com.example.autotests.utils.User;
+import com.example.autotests.pages.DialogPage;
+import com.example.autotests.pages.LoginPage;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Random;
 
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestMessage {
+
+    Toolbar toolbar = new Toolbar();
     @Test
     public void messageTest() {
         open("https://ok.ru");
@@ -40,9 +43,9 @@ public class TestMessage {
 
         //отправляем сообщение
         open("https://ok.ru/messages/" + user2.getId());
-        String message = generateLine();
+        String message = toolbar.generateLine();
         dialogPage.sendMessage(message);
-        exit();
+        toolbar.exit();
 
         //заходим с другого аккаунта и проверяем получение сообщения
         loginPage.login(user2.getLogin(), user2.getPassword());
@@ -52,25 +55,4 @@ public class TestMessage {
         assertEquals(message, last);
     }
 
-    public static void exit() {
-        String xPathToolBar = "//div[@class='ucard-mini toolbar_ucard js-toolbar-menu']";
-        String xPathChangeProfile = "//a[@class='button-pro __small __sec __wide']";
-        $(By.xpath(xPathToolBar)).click();
-        $(By.xpath(xPathChangeProfile)).click();
-    }
-
-    Random random = new Random();
-
-    public String generateLine() {
-        int leftLimit = 97; // letter 'a'
-        int rightLimit = 122; // letter 'z'
-        int targetStringLength = 10;
-        StringBuilder buffer = new StringBuilder(targetStringLength);
-        for (int i = 0; i < targetStringLength; i++) {
-            int randomLimitedInt = leftLimit + (int)
-                    (random.nextFloat() * (rightLimit - leftLimit + 1));
-            buffer.append((char) randomLimitedInt);
-        }
-        return buffer.toString();
-    }
 }

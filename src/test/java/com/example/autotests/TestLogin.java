@@ -1,13 +1,15 @@
 package com.example.autotests;
 import org.junit.jupiter.api.*;
+
 import java.io.*;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static com.codeborne.selenide.Selenide.*;
 
-public class MainPageTest {
+public class TestLogin {
 
     @Test
-    public void testMainPage() {
+    public void loginTest() {
         open("https://ok.ru");
         String login = null;
         String password = null;
@@ -20,7 +22,7 @@ public class MainPageTest {
             ex.printStackTrace();
         }
 
-        User user = new User("Екатерина Борисова",login, password);
+        User user = new User("Екатерина Борисова",login, password, null);
             LoginPage loginPage = new LoginPage();
             loginPage.login(user.getLogin(), user.getPassword());
             MainPage mainPage = new MainPage();

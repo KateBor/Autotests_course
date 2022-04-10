@@ -1,6 +1,8 @@
 package com.example.autotests.utils;
+
 import org.openqa.selenium.By;
-import java.util.Random;
+
+import java.util.*;
 
 import static com.codeborne.selenide.Selenide.$;
 
@@ -25,5 +27,20 @@ public class Toolbar {
             buffer.append((char) randomLimitedInt);
         }
         return buffer.toString();
+    }
+
+    public User getRandomUserNameAndId() {
+        Map<String, String> users = new HashMap<>();
+        List<String> id = Arrays.asList("569442670075", "567508353090", "592921244707", "589088855467");
+        users.put(id.get(0), "Екатерина Борисова");
+        users.put(id.get(1), "Лев С");
+        users.put(id.get(2), "Сергей Соин");
+        users.put(id.get(3), "Дарья Дюрдева");
+        int index = Math.abs(random.nextInt() % id.size());
+        User user = new User();
+
+        user.setId(id.get(index));
+        user.setFullName(user.id);
+        return user;
     }
 }

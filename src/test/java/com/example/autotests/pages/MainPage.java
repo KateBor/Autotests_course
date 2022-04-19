@@ -11,5 +11,4 @@ public class MainPage {
     public String getName() {
         return $(By.xpath(xPathClassFullName)).getText();
     }
-
 }

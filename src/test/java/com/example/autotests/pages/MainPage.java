@@ -7,8 +7,12 @@ import static com.codeborne.selenide.Selenide.$;
 
 @NoArgsConstructor
 public class MainPage {
-    String xPathClassFullName = "//div[@class='tico ellip']";
+    By xPathClassFullName = By.xpath("//div[@class='tico ellip']");
     public String getName() {
-        return $(By.xpath(xPathClassFullName)).getText();
+        return $(xPathClassFullName).getText();
+    }
+
+    public boolean isLoadCheck(String name) {
+        return $(xPathClassFullName).getText().equals(name);
     }
 }

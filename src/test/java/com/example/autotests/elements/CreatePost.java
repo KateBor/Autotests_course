@@ -8,12 +8,12 @@ import static com.codeborne.selenide.Selenide.$;
 
 @NoArgsConstructor
 public class CreatePost {
-    static String xPathPostFrame = "//div[@data-module='postingForm/mediaText']";
-    static String xPathPostButton = "//div[@data-l='t,button.submit']";
+    static By xPathPostFrame = By.xpath("//div[@data-module='postingForm/mediaText']");
+    static By xPathPostButton = By.xpath("//div[@data-l='t,button.submit']");
 
     public void writePost(String text) {
-        $(By.xpath(xPathPostFrame)).setValue(text);
-        $(By.xpath(xPathPostButton)).shouldBe(Condition.visible);
-        $(By.xpath(xPathPostButton)).click();
+        $(xPathPostFrame).setValue(text);
+        $(xPathPostButton).shouldBe(Condition.visible);
+        $(xPathPostButton).click();
     }
 }

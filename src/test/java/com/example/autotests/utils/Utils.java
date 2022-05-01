@@ -9,13 +9,6 @@ public class Utils {
 
     static Random random = new Random();
 
-//    public void exit() {
-//        String xPathToolBar = "//div[@class='ucard-mini toolbar_ucard js-toolbar-menu']";
-//        String xPathChangeProfile = "//a[@class='button-pro __small __sec __wide']";
-//        $(By.xpath(xPathToolBar)).click();
-//        $(By.xpath(xPathChangeProfile)).click();
-//    }
-
     //Data Strategy
     public static String generateLine() {
         int leftLimit = 97; // letter 'a'
@@ -48,5 +41,4 @@ public class Utils {
                 .setId(id.get(index))
                 .build();
     }
-    //добавить пакеты
 }

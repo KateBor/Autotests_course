@@ -5,7 +5,6 @@ import com.example.autotests.pages.ProfilePage;
 import com.example.autotests.utils.Utils;
 import com.example.autotests.utils.User;
 import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 

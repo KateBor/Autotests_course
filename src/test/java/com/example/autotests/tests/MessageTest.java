@@ -16,13 +16,11 @@ public class MessageTest extends BaseTest {
 
         DialogPage dialogPage = new DialogPage();
 
-        //отправляем сообщение
         open("https://ok.ru/messages/" + user2.getId());
         String message = Utils.generateLine();
         dialogPage.sendMessage(message);
         closeWebDriver();
 
-        //заходим с другого аккаунта и проверяем получение сообщения
         open("https://ok.ru");
         loginPage.login(user2.getLogin(), user2.getPassword());
         open("https://ok.ru/messages/" + user1.getId());
